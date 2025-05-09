@@ -11,6 +11,7 @@ export interface App {
   baseWebUrl: string;
   hashSalt: string;
   folderPrefix: number;
+  adminUID: string;
 }
 
 export enum DebugOption {
@@ -39,7 +40,8 @@ export const StatusCodes: { [key: number]: string } = {
   460: 'Plugin out of date - please upgrade to the latest version',
   461: 'I am currently performing maintenance on the server. Service will return to normal soon.',
   462: 'Invalid API key, you should automatically be redirected to your browser to request a new one', // 462 will automatically get a new key
-  463: 'Invalid authentication token'
+  463: 'Invalid authentication token',
+  464: 'Invalid uid provided',
 };
 
 export function serverError (error: ServerErrors) {

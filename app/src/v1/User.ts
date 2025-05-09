@@ -16,6 +16,10 @@ export default class User extends Controller {
    * Send a UID and get an API key
    */
   async getKey (uid: string) {
+    // Deny access to nonadmins if admin UID is present
+    if (!!this.app.adminUID && uid !== this.app.adminUID) {
+      throw new HTTPException(464); // Server error, unable to save
+    }
     // Look for a user record for this UID
     const user = await Mapper(this.app.db, 'users');
     await user.load({
