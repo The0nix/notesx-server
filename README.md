@@ -27,3 +27,4 @@ This file will sync to all your devices using your normal sync method, so all yo
 | CLOUDFLARE_TURNSTILE_SECRET |                     | *OPTIONAL.* If you want to use Turnstile to show a captcha when someone creates an account.                                              |
 | CLOUDFLARE_ZONE_ID          |                     | *OPTIONAL.* If you want to use Cloudflare proxy in front of your server.                                                                 |
 | CLOUDFLARE_API_KEY          |                     | *OPTIONAL.* If you want to use Cloudflare proxy in front of your server.                                                                 |
+| ADMIN_UID                   |                     | *OPTIONAL.* If you want to prevent others from using your server. You can find your uid in `<VAULT_DIR>/.obsidian/plugins/share-note/data.json`.                                                                 |
