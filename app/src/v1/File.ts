@@ -145,8 +145,11 @@ export default class File extends Controller {
         }
       } else if (userProvidedName && this.file.notFound) {
         // The user has sent a name but it's not found in the DB.
-        // We don't want them using some random name so create a new one.
-        if (createIfNotExist) {
+        // Unless ALLOW_CUSTOM_URLS is set, we don't want them using some
+        // random name so create a new one.
+        if (createIfNotExist && this.app.allowCustomUrls) {
+          // Accept the requested name as-is
+        } else if (createIfNotExist) {
           this.filename = await this.getHashFilename(this.extension)
         } else {
           throw new HTTPException(403) // Delete your existing share link

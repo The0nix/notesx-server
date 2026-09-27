@@ -24,6 +24,7 @@ export const appInstance: App = {
   hashSalt: process.env.HASH_SALT || '',
   folderPrefix: parseInt(process.env.FOLDER_PREFIX || '0', 10),
   adminUID: process.env.ADMIN_UID || '',
+  allowCustomUrls: ['1', 'true', 'yes'].includes((process.env.ALLOW_CUSTOM_URLS || '').toLowerCase()),
 }
 
 const app = new Hono()

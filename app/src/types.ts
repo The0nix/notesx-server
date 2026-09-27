@@ -12,6 +12,7 @@ export interface App {
   hashSalt: string;
   folderPrefix: number;
   adminUID: string;
+  allowCustomUrls: boolean;
 }
 
 export enum DebugOption {
